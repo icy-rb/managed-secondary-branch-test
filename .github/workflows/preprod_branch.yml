@@ -20,6 +20,12 @@ jobs:
       #     from: main
       #   env:
       #     GITHUB_TOKEN: ${{ secrets.PREPROD_BRANCH_AUTOMATION_GITHUB_TOKEN }}
+      - name: Create branch
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        with:
+          branch: preprod
+        env:
+          GITHUB_TOKEN: ${{ secrets.PREPROD_BRANCH_AUTOMATION_GITHUB_TOKEN }}
       - name: Sync branch
         uses: connor-baer/action-sync-branch@main
         with:

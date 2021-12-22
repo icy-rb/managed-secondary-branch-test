@@ -10,16 +10,16 @@ jobs:
     name: Sync preprod branch with main
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Create branch
-        uses: julb/action-manage-branch@v1
-        with:
-          name: staging
-          state: present
-          from: main
-        env:
-          GITHUB_TOKEN: ${{ secrets.PREPROD_BRANCH_AUTOMATION_GITHUB_TOKEN }}
+      # - name: Checkout repository
+      #   uses: actions/checkout@v2
+      # - name: Create branch
+      #   uses: julb/action-manage-branch@v1
+      #   with:
+      #     name: preprod
+      #     state: present
+      #     from: main
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.PREPROD_BRANCH_AUTOMATION_GITHUB_TOKEN }}
       - name: Sync branch
         uses: connor-baer/action-sync-branch@main
         with:

@@ -19,8 +19,8 @@ jobs:
           state: present
           # from: main
         env:
-          # GITHUB_TOKEN: ${{ secrets.PREPROD_BRANCH_AUTOMATION_GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PREPROD_BRANCH_AUTOMATION_GITHUB_TOKEN }}
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # - name: Create branch
       #   uses: peterjgrainger/action-create-branch@v2.0.1
       #   with:
@@ -31,6 +31,6 @@ jobs:
         uses: connor-baer/action-sync-branch@main
         with:
           branch: preprod
-          # token: ${{ secrets.PREPROD_BRANCH_AUTOMATION_GITHUB_TOKEN }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PREPROD_BRANCH_AUTOMATION_GITHUB_TOKEN }}
+          # token: ${{ secrets.GITHUB_TOKEN }}
           force: true

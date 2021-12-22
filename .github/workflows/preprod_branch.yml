@@ -1,0 +1,19 @@
+name: Preprod branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-branch:
+    name: Sync preprod branch with main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - uses: connor-baer/action-sync-branch@main
+        with:
+          branch: preprod
+          token: ${{ secrets.PREPROD_BRANCH_AUTOMATION_GITHUB_TOKEN }}
+          force: true
